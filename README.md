@@ -12,7 +12,7 @@ export POSTGRES_USER=
 export POSTGRES_PASSWORD=
 ```
 
-Then, run start the container with docker-compose.
+Then, start the container with docker-compose.
 
 ```sh
 # Add `-d` to the end of the command to run the container in the background.
@@ -75,7 +75,7 @@ docker run -d \
 vim $HOME/.profile
 
 # if SSL is enabled, remove `?sslmode=disable`
-export DB_CONN='postgres://user:pass@localhost:5432/db?sslmode=disable'
+export POSTGRES_CONN='postgres://user:pass@localhost:5432/db?sslmode=disable'
 
 source $HOME/.profile
 ```
@@ -83,7 +83,7 @@ source $HOME/.profile
 ### Connect to the running postgres database with the env variable connection string
 
 ```sh
-docker exec -it postgres psql $DB_CONN
+docker exec -it postgres psql $POSTGRES_CONN
 ```
 
 ## License
